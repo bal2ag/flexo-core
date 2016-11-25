@@ -26,4 +26,4 @@ def validate_fields(fields, to_validate, context_message=None):
     missing = required_fields - set(to_validate.keys())
     if len(missing) > 0:
         raise ValidationError("%smissing required fields: %s" %\
-                (', '.join(missing)))
+                (context_message, ', '.join(missing)))
